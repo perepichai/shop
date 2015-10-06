@@ -88,15 +88,16 @@
     </div>
     <br/>
     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-2	col-lg-2 left-menu">
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-info active">Меню слева</a>
-                <a href="#" class="list-group-item list-group-item-info">Категория товаров №1</a>
-                <a href="#" class="list-group-item list-group-item-info">Категория товаров №2</a>
-                <a href="#" class="list-group-item list-group-item-info">Категория товаров №3</a>
-            </div>
+        <div id="list-group" class="col-xs-12 col-sm-4 col-md-3	col-lg-3 left-menu">
+            <script type="text/template" id="category">
+                <div class="list-group">
+                    <% for(var i = 0; i < cat.length; i++) { %>
+                    <a href="/<%=cat[i]%>" class="list-group-item list-group-item-info"><%=cat[i]%></a>
+                    <% } %>
+                </div>
+            </script>
         </div>
-        <div id="main-content" class="col-xs-12 col-sm-8 col-md-10 col-lg-10">
+        <div id="main-content" class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
         <!-- Товары use template LoDash!!! -->
             <script type="text/template" id="products">
             <ul class="list-unstyled">
@@ -110,7 +111,10 @@
                         <h2><a href="javascript:void(0)"><%=list[i].title%></a></h2>
 
                         <p>
-                            <b>Item's description:</b><%=list[i].description%>
+                            <b>Категория: </b><%=list[i].category%>
+                        </p>
+                        <p>
+                            <b>Item's description: </b><%=list[i].description%>
                         </p>
                     </div>
                 </li>
@@ -119,6 +123,7 @@
             </ul>
             </script>
         <!-- / Товары use template LoDash!!! -->
+
         <!--Пагинация-->
             <nav class="pagination-chepon">
                 <ul class="pagination pagination-sm">
