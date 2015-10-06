@@ -88,11 +88,20 @@
     </div>
     <br/>
     <div class="row">
-        <div id="list-group" class="col-xs-12 col-sm-4 col-md-3	col-lg-3 left-menu">
+        <div id="list-group-category" class="col-xs-12 col-sm-4 col-md-3	col-lg-3 left-menu">
             <script type="text/template" id="category">
                 <div class="list-group">
+                    <a href="/category" class="list-group-item list-group-item-info">Категории</a>
                     <% for(var i = 0; i < cat.length; i++) { %>
-                    <a href="/<%=cat[i]%>" class="list-group-item list-group-item-info"><%=cat[i]%></a>
+                    <a href="/<%=cat[i]%>" class="list-group-item"><%=cat[i]%></a>
+                    <% } %>
+                </div>
+            </script>
+            <script type="text/template" id="brand">
+                <div class="list-group">
+                    <a href="/<%=brand[i]%>" class="list-group-item list-group-item-info">Бренды</a>
+                    <% for(var i = 0; i < brand.length; i++) { %>
+                    <a href="/<%=brand[i]%>" class="list-group-item"><%=brand[i]%></a>
                     <% } %>
                 </div>
             </script>

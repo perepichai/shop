@@ -2,36 +2,43 @@
   "id": 1,
   "title": "Барбитушка 1",
   "category": "Протеин",
+  "brand": "Dymatize Nutrition",
   "description":"1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 },
 {
 "id": 2,
 "title": "Барбитушка 2",
   "category": "Витамины",
+  "brand": "Optimum Nutrition",
   "description":"2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 },
 {
 "id": 3,
 "title": "Барбитушка 3",
   "category": "Креатин",
+  "brand": "Dymatize Nutrition",
 "description": "3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 },
 {
 "id": 4,
 "title": "Барбитушка 4",
   "category": "Протеин",
+  "brand": "BSN",
   "description":"4 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 },
 {
 "id": 5,
 "title": "Барбитушка 5",
   "category": "Креатин",
+  "brand": "BSN",
 "description":"5 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 },
 {
 "id": 6,
 "title": "Барбитушка 6",
   "category": "Гейнер",
+  "brand": "BSN",
+
   "description":"6 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 }
 ,
@@ -39,6 +46,7 @@
     "id": 7,
     "title": "Барбитушка 7",
     "category": "BCAA",
+    "brand": "Universal Nutrition",
     "description":"7 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   }
 ,
@@ -46,6 +54,7 @@
     "id": 8,
     "title": "Барбитушка 8",
     "category": "Аминокислоты",
+    "brand": "Universal Nutrition",
     "description":"8 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   }
   ]
