@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Shop</title>
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
 
 </head>
 <body>
@@ -46,48 +46,51 @@
     <!-- / Navbar -->
 </div>
 <div class="container" id="content">
-    <br/>
-    <ol class="breadcrumb">
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">каталог</a></li>
-        <li class="active">спортпит</li>
-    </ol>
+
     <div class="row">
         <!-- Featured Products -->
 
-        <!--<div id="featured-product-carousel" class="carousel slide" data-pause="hover" data-wrap="true"-->
-             <!--data-interval="3000">-->
-            <!--<ol class="carousel-indicators">-->
-                <!--<li data-target="#featured-product-carousel" data-slide-to="0" class="active"></li>-->
-                <!--<li data-target="#featured-product-carousel" data-slide-to="1" class=""></li>-->
-                <!--<li data-target="#featured-product-carousel" data-slide-to="2" class=""></li>-->
-            <!--</ol>-->
-            <!--<div class="carousel-inner">-->
-                <!--<div class="item active">-->
-                    <!--<img src="img/promo-product-1.jpg" alt="ABC Auction Deals" class="img-responsive center-block">-->
-                <!--</div>-->
-                <!--<div class="item">-->
-                    <!--<img src="img/promo-product-2.jpg" alt="ABC Auction Deals" class="img-responsive center-block">-->
-                <!--</div>-->
-                <!--<div class="item">-->
-                    <!--<img src="img/promo-product-3.jpg" alt="ABC Auction Deals" class="img-responsive center-block">-->
-                <!--</div>-->
-            <!--</div>-->
+        <div id="featured-product-carousel" class="carousel slide" data-pause="hover" data-wrap="true"
+             data-interval="3000">
+            <ol class="carousel-indicators">
+                <li data-target="#featured-product-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#featured-product-carousel" data-slide-to="1" class=""></li>
+                <li data-target="#featured-product-carousel" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/promo-product-1.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
+                </div>
+                <div class="item">
+                    <img src="img/promo-product-2.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
+                </div>
+                <div class="item">
+                    <img src="img/promo-product-3.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
+                </div>
+            </div>
 
-            <!-- Controls -->
-            <!--<a class="left carousel-control" href="#featured-product-carousel" data-slide="prev">-->
-                <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
-            <!--</a>-->
-            <!--<a class="right carousel-control" href="#featured-product-carousel" data-slide="next">-->
-                <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
-            <!--</a>-->
-        <!--</div>-->
+             Controls
+            <a class="left carousel-control" href="#featured-product-carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#featured-product-carousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
 
         <!-- / Featured Products -->
+
+        <br/>
+        <ol class="breadcrumb">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">каталог</a></li>
+            <li class="active">спортпит</li>
+        </ol>
+
     </div>
     <br/>
     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-2	col-lg-2">
+        <div class="col-xs-12 col-sm-4 col-md-2	col-lg-2 left-menu">
             <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-info active">Меню слева</a>
                 <a href="#" class="list-group-item list-group-item-info">Категория товаров №1</a>
@@ -95,120 +98,30 @@
                 <a href="#" class="list-group-item list-group-item-info">Категория товаров №3</a>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-8 col-md-10 col-lg-10">
-            <!-- Товары -->
+        <div id="main-content" class="col-xs-12 col-sm-8 col-md-10 col-lg-10">
+        <!-- Товары use template LoDash!!! -->
+            <script type="text/template" id="products">
             <ul class="list-unstyled">
-                <li class="col-sm-4">
+                <% for(var i = 0; i < list.length; i++) { %>
+                <li class="col-sm-6">
                     <div class="col-md-4">
-                        <a href="javascript:void(0)"><img src="img/01.jpg" alt="" class="img-responsive"></a>
+                        <a href="javascript:void(0)"><img src="img/<%=list[i].id%>.jpg" alt="" class="img-responsive"></a>
                     </div>
 
                     <div class="product-description-holder col-md-8">
-                        <h2><a href="javascript:void(0)">Item's title</a></h2>
+                        <h2><a href="javascript:void(0)"><%=list[i].title%></a></h2>
 
                         <p>
-                            <b>Item's description:</b>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                            eiusmod
-                            tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
+                            <b>Item's description:</b><%=list[i].description%>
                         </p>
                     </div>
                 </li>
-                <li class="col-sm-4">
-                    <div class="col-md-4">
-                        <a href="javascript:void(0)"><img src="img/02.jpg" alt="" class="img-responsive"></a>
-                    </div>
+                <% } %>
 
-                    <div class="col-md-8">
-                        <h2><a href="javascript:void(0)">Item's title</a></h2>
-
-                        <p>
-                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                            eiusmod
-                            tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </li>
-                <li class="col-sm-4">
-                    <div class="col-md-4">
-                        <a href="javascript:void(0)"><img src="img/03.jpg" alt="" class="img-responsive"></a>
-                    </div>
-
-                    <div class="col-md-8">
-                        <h2><a href="javascript:void(0)">Item's title</a></h2>
-
-                        <p>
-                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                            eiusmod
-                            tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </li>
-                <li class="col-sm-4">
-                    <div class="col-md-4">
-                        <a href="javascript:void(0)"><img src="img/04.jpg" alt="" class="img-responsive"></a>
-                    </div>
-
-                    <div class="col-md-8">
-                        <h2><a href="javascript:void(0)">Item's title</a></h2>
-
-                        <p>
-                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                            eiusmod
-                            tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </li>
-                <li class="col-sm-4">
-                    <div class="col-md-4">
-                        <a href="javascript:void(0)"><img src="img/05.jpg" alt="" class="img-responsive"></a>
-                    </div>
-
-                    <div class="col-md-8">
-                        <h2><a href="javascript:void(0)">Item's title</a></h2>
-
-                        <p>
-                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                            eiusmod
-                            tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </li>
-                <li class="col-sm-4">
-                    <div class="col-md-4">
-                        <a href="javascript:void(0)"><img src="img/06.jpg" alt="" class="img-responsive"></a>
-                    </div>
-
-                    <div class="col-md-8">
-                        <h2><a href="javascript:void(0)">Item's title</a></h2>
-
-                        <p>
-                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                            eiusmod
-                            tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </li>
             </ul>
-            <!-- / Товары  -->
-            <!--Пагинация-->
+            </script>
+        <!-- / Товары use template LoDash!!! -->
+        <!--Пагинация-->
             <nav class="pagination-chepon">
                 <ul class="pagination pagination-sm">
                     <li>
@@ -226,6 +139,7 @@
                     </li>
                 </ul>
             </nav>
+        <!-- / Пагинация-->
         </div>
     </div>
 
@@ -243,6 +157,7 @@
     </footer>
     <!-- / Footer -->
 </div>
+<script src="js/custom.js"></script>
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
