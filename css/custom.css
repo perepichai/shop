@@ -1,0 +1,36 @@
+.product {
+    min-height: 315px;
+    margin-bottom: 5px;
+}
+.product:hover {
+    border: 1px solid #d98426;
+    border-radius: 6px;
+}
+
+.product .price {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: #fb515d;
+    background: #fff3b5 none repeat scroll 0 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 0.5em;
+    padding: 7px 7px 5px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.basket {
+background: #fb3f4c none repeat scroll 0 0;
+border-radius: 50%;
+color: #fff;
+font-size: 1em;
+height: 1.35294em;
+line-height: 1.35294em;
+position: absolute;
+right: 0;
+text-align: center;
+top: 7px;
+width: 1.35294em;
+z-index: 1;
+}

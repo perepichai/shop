@@ -3,6 +3,7 @@
 <head>
     <title>Shop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
 
 </head>
@@ -21,16 +22,16 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Главная<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Каталог</a></li>
-                    <li><a href="#">Доставка</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li class="active"><a href="#">Р“Р»Р°РІРЅР°СЏ<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">РљР°С‚Р°Р»РѕРі</a></li>
+                    <li><a href="#">Р”РѕСЃС‚Р°РІРєР°</a></li>
+                    <li><a href="#">РљРѕРЅС‚Р°РєС‚С‹</a></li>
                 </ul>
                 <!--<form class="navbar-form navbar-left navbar-input-group" role="search">-->
-                    <!--<div class="form-group">-->
-                        <!--<input type="text" class="form-control" placeholder="Enter product name">-->
-                    <!--</div>-->
-                    <!--<button type="submit" class="btn btn-default">Search</button>-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="Enter product name">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">Search</button>-->
                 <!--</form>-->
                 <ul class="nav navbar-nav navbar-right">
                     <!--<li><a href="javascript:void(0)"><span class="glyphicon glyphicon-question-sign"></span> Help</a>
@@ -38,7 +39,7 @@
                     <li><a href="javascript:void(0);"><span class="glyphicon glyphicon-user"></span> Login</a></li>
                     -->
                     <li><a href="javascript:void(0);"><span class="glyphicon glyphicon-earphone"></span> (044) 123-44-55</a></li>
-                    <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-shopping-cart"></span> Корзина</a></li>
+                    <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-shopping-cart"></span> РљРѕСЂР·РёРЅР° <span id="basket"></span></a></li>
                 </ul>
             </div>
         </div>
@@ -48,8 +49,8 @@
 <div class="container" id="content">
 
     <div class="row">
-        <!-- Featured Products -->
 
+        <!-- Featured Products -->
         <div id="featured-product-carousel" class="carousel slide" data-pause="hover" data-wrap="true"
              data-interval="3000">
             <ol class="carousel-indicators">
@@ -80,9 +81,9 @@
 
         <br/>
         <ol class="breadcrumb">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">каталог</a></li>
-            <li class="active">спортпит</li>
+            <li><a href="#">Р“Р»Р°РІРЅР°СЏ</a></li>
+            <li><a href="#">РєР°С‚Р°Р»РѕРі</a></li>
+            <li class="active">СЃРїРѕСЂС‚РїРёС‚</li>
         </ol>
 
     </div>
@@ -91,7 +92,7 @@
         <div id="list-group-category" class="col-xs-12 col-sm-4 col-md-3	col-lg-3 left-menu">
             <script type="text/template" id="category">
                 <div class="list-group">
-                    <a href="/category" class="list-group-item list-group-item-info">Категории</a>
+                    <a href="/category" class="list-group-item list-group-item-info">РљР°С‚РµРіРѕСЂРёРё</a>
                     <% for(var i = 0; i < cat.length; i++) { %>
                     <a href="/<%=cat[i]%>" class="list-group-item"><%=cat[i]%></a>
                     <% } %>
@@ -99,7 +100,7 @@
             </script>
             <script type="text/template" id="brand">
                 <div class="list-group">
-                    <a href="/<%=brand[i]%>" class="list-group-item list-group-item-info">Бренды</a>
+                    <a href="/<%=brand[i]%>" class="list-group-item list-group-item-info">Р‘СЂРµРЅРґС‹</a>
                     <% for(var i = 0; i < brand.length; i++) { %>
                     <a href="/<%=brand[i]%>" class="list-group-item"><%=brand[i]%></a>
                     <% } %>
@@ -107,37 +108,48 @@
             </script>
         </div>
         <div id="main-content" class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-        <!-- Товары use template LoDash!!! -->
+            <!-- РўРѕРІР°СЂС‹ use template LoDash!!! -->
             <script type="text/template" id="products">
-            <ul class="list-unstyled">
-                <% for(var i = 0; i < list.length; i++) { %>
-                <li class="col-sm-6">
-                    <div class="col-md-4">
-                        <a href="javascript:void(0)"><img src="img/<%=list[i].id%>.jpg" alt="" class="img-responsive"></a>
-                    </div>
+                <ul class="list-unstyled">
+                    <% for(var i = 0; i < list.length; i++) { %>
+                    <li class="col-sm-6 product">
+                        <div class="col-md-4">
+                            <div><a href="javascript:void(0)"><img src="img/<%=list[i].id%>.jpg" alt="" class="img-responsive"></a></div>
+                            <div>
+                                <span class="price"><%=list[i].price%> <%=list[i].currency[0]%></span>
+                            </div>
+                            <!-- РџСЂРёРІСЏР·С‹РІР°РµРј РєРЅРѕРїРєСѓ СЃ id С‚РѕРІР°СЂР°-->
+                            <div>
+                                <input type="hidden" name="goods" value=<%=list[i].id%>>
+                                <button class="btn btn-success product-<%=list[i].id%>"><span class="glyphicon glyphicon-shopping-cart"></span> РљСѓРїРёС‚СЊ</button>
+                            </div>
+                            <!-- / РџСЂРёРІСЏР·С‹РІР°РµРј РєРЅРѕРїРєСѓ СЃ id С‚РѕРІР°СЂР°-->
+                        </div>
+                        <div class="product-description-holder col-md-8">
+                            <h3><a href="javascript:void(0)"><%=list[i].title%></a></h3>
 
-                    <div class="product-description-holder col-md-8">
-                        <h2><a href="javascript:void(0)"><%=list[i].title%></a></h2>
+                            <p>
+                                <b>РљР°С‚РµРіРѕСЂРёСЏ: </b><%=list[i].category%>
+                            </p>
+                            <p>
+                                <b>РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ: </b><%=list[i].brand%>
+                            </p>
+                            <p>
+                                <b>Item's description: </b><%=list[i].description%>
+                            </p>
+                        </div>
+                    </li>
+                    <% } %>
 
-                        <p>
-                            <b>Категория: </b><%=list[i].category%>
-                        </p>
-                        <p>
-                            <b>Item's description: </b><%=list[i].description%>
-                        </p>
-                    </div>
-                </li>
-                <% } %>
-
-            </ul>
+                </ul>
             </script>
-        <!-- / Товары use template LoDash!!! -->
+            <!-- / РўРѕРІР°СЂС‹ use template LoDash!!! -->
 
-        <!--Пагинация-->
+            <!--РџР°РіРёРЅР°С†РёСЏ-->
             <nav class="pagination-chepon">
                 <ul class="pagination pagination-sm">
                     <li>
-                        <a href="#" aria-label="предыдущая">
+                        <a href="#" aria-label="РїСЂРµРґС‹РґСѓС‰Р°СЏ">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
@@ -145,13 +157,13 @@
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
                     <li>
-                        <a href="#" aria-label="Следующая">
+                        <a href="#" aria-label="РЎР»РµРґСѓСЋС‰Р°СЏ">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
                 </ul>
             </nav>
-        <!-- / Пагинация-->
+            <!-- / РџР°РіРёРЅР°С†РёСЏ-->
         </div>
     </div>
 
@@ -160,11 +172,11 @@
     <!-- Footer -->
     <footer class="text-center footer-chepon">
         <br/>
-        <a href="javascript:void(0)">Главная</a> |
-        <a href="javascript:void(0)">Каталог</a> |
-        <a href="javascript:void(0)">Доставка</a> |
-        <a href="javascript:void(0)">О нас</a> |
-        <a href="javascript:void(0)">Контакты</a>
+        <a href="javascript:void(0)">Р“Р»Р°РІРЅР°СЏ</a> |
+        <a href="javascript:void(0)">РљР°С‚Р°Р»РѕРі</a> |
+        <a href="javascript:void(0)">Р”РѕСЃС‚Р°РІРєР°</a> |
+        <a href="javascript:void(0)">Рћ РЅР°СЃ</a> |
+        <a href="javascript:void(0)">РљРѕРЅС‚Р°РєС‚С‹</a>
         <br/><br/>
     </footer>
     <!-- / Footer -->
@@ -172,6 +184,5 @@
 <script src="js/custom.js"></script>
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
 </body>
 </html>

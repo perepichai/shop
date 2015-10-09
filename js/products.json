@@ -3,6 +3,8 @@
   "title": "Барбитушка 1",
   "category": "Протеин",
   "brand": "Dymatize Nutrition",
+  "price": "1300",
+  "currency": ["грн","usd"],
   "description":"1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 },
 {
@@ -10,6 +12,8 @@
 "title": "Барбитушка 2",
   "category": "Витамины",
   "brand": "Optimum Nutrition",
+  "price": "2300",
+  "currency": ["грн","usd"],
   "description":"2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 },
 {
@@ -17,6 +21,8 @@
 "title": "Барбитушка 3",
   "category": "Креатин",
   "brand": "Dymatize Nutrition",
+  "price": "700",
+  "currency": ["грн","usd"],
 "description": "3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 },
 {
@@ -24,6 +30,8 @@
 "title": "Барбитушка 4",
   "category": "Протеин",
   "brand": "BSN",
+  "price": "245",
+  "currency": ["грн","usd"],
   "description":"4 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 },
 {
@@ -31,6 +39,8 @@
 "title": "Барбитушка 5",
   "category": "Креатин",
   "brand": "BSN",
+  "price": "700",
+  "currency": ["грн","usd"],
 "description":"5 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 },
 {
@@ -38,7 +48,8 @@
 "title": "Барбитушка 6",
   "category": "Гейнер",
   "brand": "BSN",
-
+  "price": "70",
+  "currency": ["грн","usd"],
   "description":"6 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 }
 ,
@@ -47,6 +58,8 @@
     "title": "Барбитушка 7",
     "category": "BCAA",
     "brand": "Universal Nutrition",
+    "price": "1700",
+    "currency": ["грн","usd"],
     "description":"7 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   }
 ,
@@ -55,6 +68,8 @@
     "title": "Барбитушка 8",
     "category": "Аминокислоты",
     "brand": "Universal Nutrition",
+    "price": "500",
+    "currency": ["грн","usd"],
     "description":"8 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   }
   ]
