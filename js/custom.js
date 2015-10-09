@@ -3,6 +3,7 @@ window.addEventListener('load', function() {
     var productsSort = [];
     var brandsSort = [];
     var basketData = document.querySelector('#basket');
+    var buy = [];
     var xhr = new XMLHttpRequest;
     xhr.open('GET', 'js/products.json');
     xhr.send();
@@ -48,19 +49,22 @@ window.addEventListener('load', function() {
             // Добавляем event на кнопку
             var buttons = document.querySelectorAll('button');
             for(var y =0; y<buttons.length; y++) {
-                buttons[y].addEventListener('click', function(y) {
-                    console.log(y.target);
-                    var buttonBuy = document.querySelectorAll('input');
-                    console.log(buttonBuy[5].value);
+                buttons[y].addEventListener('click', function() {
+                    // тут дикость через jquery берез значение value соседа input
+                    var productsId = ($(this).siblings()[0].value);
+                    buy.push(products[productsId].title);
+                    console.log(buy);
+                    // / тут дикость через jquery берез значение value соседа input
                     basket();
                     // Обработка корзины
                     function basket() {
                         basketData.classList.add('basket');
                         +(basketData.innerHTML) ++;
                     }
-                    // /Обработка корзины
+                    // / Обработка корзины
                 })
             }
+            // / Добавляем event на кнопку
 
         }
 
