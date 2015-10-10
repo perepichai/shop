@@ -20,12 +20,12 @@ window.addEventListener('load', function() {
                 productsSort[i] = (products[i].category);
                 brandsSort[i] = (products[i].brand);
             }
-            //Удаляем дубли категорий, брендов
+            //РЈРґР°Р»СЏРµРј РґСѓР±Р»Рё РєР°С‚РµРіРѕСЂРёР№, Р±СЂРµРЅРґРѕРІ
             productsSort = _.uniq(productsSort);
             brandsSort = _.uniq(brandsSort);
-            // -- Удаляем дубли категорий, брендов
+            // -- РЈРґР°Р»СЏРµРј РґСѓР±Р»Рё РєР°С‚РµРіРѕСЂРёР№, Р±СЂРµРЅРґРѕРІ
 
-            //Подключение Lodash _.template
+            //РџРѕРґРєР»СЋС‡РµРЅРёРµ Lodash _.template
             //Products
             var tmplProducts = document.getElementById('products').innerHTML.trim();
             tmplProducts = _.template(tmplProducts);
@@ -44,29 +44,31 @@ window.addEventListener('load', function() {
             document.getElementById('list-group-category').innerHTML += tmplBrand({
                 brand: brandsSort
             });
-            // -- Подключение Lodash _.template
+            // -- РџРѕРґРєР»СЋС‡РµРЅРёРµ Lodash _.template
 
-            // Добавляем event на кнопку
-            var buttons = document.querySelectorAll('button');
+            // Р”РѕР±Р°РІР»СЏРµРј event РЅР° РєРЅРѕРїРєСѓ
+            var buttons = document.querySelectorAll('button.product-btn');
+            console.log(buttons.length);
             for(var y =0; y<buttons.length; y++) {
                 buttons[y].addEventListener('click', function() {
-                    // тут дикость через jquery берез значение value соседа input
+                    // С‚СѓС‚ РґРёРєРѕСЃС‚СЊ С‡РµСЂРµР· jquery Р±РµСЂРµР· Р·РЅР°С‡РµРЅРёРµ value СЃРѕСЃРµРґР° input
                     var productsId = ($(this).siblings()[0].value);
-                    buy.push(products[productsId].title);
+                    buy.push(products[productsId-1].id);
                     console.log(buy);
-                    // / тут дикость через jquery берез значение value соседа input
+                    // / С‚СѓС‚ РґРёРєРѕСЃС‚СЊ С‡РµСЂРµР· jquery, Р±РµСЂРµРј Р·РЅР°С‡РµРЅРёРµ value СЃРѕСЃРµРґР° input
                     basket();
-                    // Обработка корзины
+                    // РћР±СЂР°Р±РѕС‚РєР° РєРѕСЂР·РёРЅС‹
                     function basket() {
                         basketData.classList.add('basket');
                         +(basketData.innerHTML) ++;
                     }
-                    // / Обработка корзины
+                    // / РћР±СЂР°Р±РѕС‚РєР° РєРѕСЂР·РёРЅС‹
                 })
             }
-            // / Добавляем event на кнопку
+            // / Р”РѕР±Р°РІР»СЏРµРј event РЅР° РєРЅРѕРїРєСѓ
 
         }
 
     };
 });
+//
